@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="abhishek.basicuserform.app.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_text_view"
+        android:id="@+id/nameTextView"
+        android:singleLine="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/nameEditText"
+        android:layout_alignTop="@+id/nameTextView"
+        android:layout_toRightOf="@+id/occupationTextView"
+        android:layout_marginLeft="28dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email_text_view"
+        android:id="@+id/emailTextView"
+        android:layout_below="@+id/nameEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/emailEditText"
+        android:layout_alignTop="@+id/emailTextView"
+        android:layout_alignLeft="@+id/nameEditText"
+        android:layout_alignStart="@+id/nameEditText"
+        android:hint="@string/email_edit_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gender_text_view"
+        android:id="@+id/genderTextView"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/emailEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/genderRadioGroup"
+        android:layout_alignTop="@+id/genderTextView"
+        android:layout_alignLeft="@+id/emailEditText"
+        android:layout_alignStart="@+id/emailEditText">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender_male_text_view"
+            android:id="@+id/maleRadioButton" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender_female_text_view"
+            android:id="@+id/femaleRadioButton" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skills_text_view"
+        android:id="@+id/skillTextView"
+        android:layout_below="@+id/genderRadioGroup"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skill_read_text_view"
+        android:id="@+id/readCheckBox"
+        android:layout_alignTop="@+id/skillTextView"
+        android:layout_alignLeft="@+id/genderRadioGroup"
+        android:layout_alignStart="@+id/genderRadioGroup" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skill_write_text_view"
+        android:id="@+id/writeCheckBox"
+        android:layout_alignTop="@+id/readCheckBox"
+        android:layout_toRightOf="@+id/readCheckBox" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skill_speak_text_view"
+        android:id="@+id/speakCheckBox"
+        android:layout_alignTop="@+id/writeCheckBox"
+        android:layout_toRightOf="@+id/writeCheckBox" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/occupation_text_view"
+        android:id="@+id/occupationTextView"
+        android:layout_below="@+id/readCheckBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/occupationSpinner"
+        android:layout_alignTop="@+id/occupationTextView"
+        android:layout_alignLeft="@+id/readCheckBox"
+        android:layout_alignStart="@+id/readCheckBox"
+        android:entries="@array/occupation_role_spinner"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_button"
+        android:id="@+id/submitButton"
+        android:onClick="submitForm"
+        android:layout_below="@+id/occupationSpinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="49dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_button"
+        android:id="@+id/resetButton"
+        android:onClick="resetFields"
+        android:layout_alignTop="@+id/submitButton"
+        android:layout_alignLeft="@+id/occupationSpinner"
+        android:layout_alignStart="@+id/occupationSpinner" />
+
+</RelativeLayout>
